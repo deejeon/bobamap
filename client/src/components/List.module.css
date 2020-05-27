@@ -1,0 +1,25 @@
+.listContainer {
+    width: 40vw;
+    overflow: scroll;
+}
+
+.listItem {
+    width: 92%;
+    height: 100px;
+    margin: 2%;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.storeImage {
+    width: 35%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.storeDetails {
+    width: 70%;
+}
