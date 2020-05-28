@@ -22,4 +22,20 @@
 
 .storeDetails {
     width: 70%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.storeDetails h3 {
+    margin-bottom: 0px;
+}
+
+.storeDetails span {
+    font-size: x-small;
+}
+
+.storeDetails p {
+    font-size: small;
 }

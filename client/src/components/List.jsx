@@ -1,15 +1,33 @@
 import React from 'react';
 import styles from './List.module.css';
 
-function List({stores}) {
+function List({stores, useLocation, setUseLocation, setCoordinates, setRedo}) {
+    function locationHandler() {
+        const geolocation = navigator.geolocation;
+        function findLocal(position) {
+            setCoordinates([position.coords.latitude, position.coords.longitude]);setUseLocation(true);
+            setRedo(true);
+        }
+        function showError() {
+            console.log(Error)
+        }
+        if (geolocation) {
+            geolocation.getCurrentPosition(findLocal, showError);
+        }
+    }
+
     return (
         <div className={styles.listContainer}>
+            {!useLocation &&
+                <button onClick={locationHandler}>Use my location</button>
+            }
             {stores.map(store => (
                 <div className={styles.listItem} key={store.id}>
                     <img className={styles.storeImage} src={store.image_url} alt={store.name}/>
                     <div className={styles.storeDetails}>
                         <h3>{store.name}</h3>
-                        <p>{store.location.city}, {store.location.state}</p>
+                        <span>{store.location.city}, {store.location.state}</span>
+                        <p>Reviews: {store.review_count}</p>
                     </div>
                 </div>
             ))}
