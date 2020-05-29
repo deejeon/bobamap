@@ -5,6 +5,7 @@ import './App.css';
 import logo from './logo.png';
 
 import Main from './views/Main';
+import SingleStore from './views/SingleStore';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       </header>
       <Router>
         <Main path="/"/>
+        <SingleStore path="stores/:alias" />
       </Router>
     </div>
   );
