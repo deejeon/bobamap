@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { Router, Link } from '@reach/router';
 
 import './App.css';
 import logo from './logo.png';
@@ -12,7 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img className="App-logo" src={logo} alt="Logo" height='100%'/>
+        <Link to="/">
+          <img className="App-logo" src={logo} alt="Logo" height='100%'/>
+        </Link>
       </header>
       <Router>
         <Main path="/"/>

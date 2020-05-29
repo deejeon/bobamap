@@ -22,10 +22,19 @@
 .single-store {
   overflow: scroll;
   max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-store-back-link {
+  align-self: flex-start;
+  margin: 10px;
+  margin-bottom: 0px;
 }
 
 .single-store-name {
   font-size: 40px;
+  margin-top: 0px;
 }
 
 .single-store-photos-container {

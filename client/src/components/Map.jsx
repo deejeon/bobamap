@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { Link } from '@reach/router';
 
 import styles from './Map.module.css';
 
@@ -37,10 +38,12 @@ function Map(props) {
                     position={{lat: props.selectedStore.coordinates.latitude, lng: props.selectedStore.coordinates.longitude}}
                     onCloseClick={() => props.setSelectedStore(null)}
                 >
-                    <div>
-                        <img className={styles.infoImage} src={props.selectedStore.image_url} alt={props.selectedStore.name}/>
-                        <h3>{props.selectedStore.name}</h3>
-                    </div>
+                    <Link to={"/stores/" + props.selectedStore.id}>
+                        <div>
+                            <img className={styles.infoImage} src={props.selectedStore.image_url} alt={props.selectedStore.name}/>
+                            <h3>{props.selectedStore.name}</h3>
+                        </div>
+                    </Link>
                 </InfoWindow>
             }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from '@reach/router';
 
 import '../App.css';
 
@@ -30,6 +31,7 @@ export default function SingleStore({ id }) {
 
     return (
         <div className="single-store">
+            <Link className="single-store-back-link" to="/">Back to map</Link>
             <h1 className="single-store-name">{currentStore.name}</h1>
             <div className="single-store-photos-container">
                 <img className="single-store-photo" src={currentStore.photos[0]} alt="1"/>
@@ -49,12 +51,13 @@ export default function SingleStore({ id }) {
                         const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
                         let startType;
                         let endType;
-                        parseInt(day.start) > 1259 ? startType = "pm" : startType = "am";
-                        parseInt(day.end) > 1259 ? endType = "pm" : endType = "am";
+                        parseInt(day.start) > 1159 ? startType = "pm" : startType = "am";
+                        parseInt(day.end) > 1159 ? endType = "pm" : endType = "am";
 
                         let startHour = Math.floor((parseInt(day.start) / 100) % 12);
                         if (Math.floor(parseInt(day.start) / 100) === 12) startHour = 12;
                         let startMinutes = parseInt(day.start) % 100;
+                        if (startMinutes === 0) startMinutes += "0";
                         const startTime = startHour + ":" + startMinutes + " " + startType;
                         
                         let endHour = Math.floor((parseInt(day.end) / 100) % 12);

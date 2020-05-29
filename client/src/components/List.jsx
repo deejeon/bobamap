@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import styles from './List.module.css';
 
 function List({stores, useLocation, setUseLocation, setCoordinates, setRedo}) {
@@ -22,14 +23,16 @@ function List({stores, useLocation, setUseLocation, setCoordinates, setRedo}) {
                 <button onClick={locationHandler}>Use my location</button>
             }
             {stores.map(store => (
-                <div className={styles.listItem} key={store.id}>
-                    <img className={styles.storeImage} src={store.image_url} alt={store.name}/>
-                    <div className={styles.storeDetails}>
-                        <h3>{store.name}</h3>
-                        <span>{store.location.city}, {store.location.state}</span>
-                        <p>Reviews: {store.review_count}</p>
+                <Link className={styles.link} to={"/stores/"+store.id}>
+                    <div className={styles.listItem} key={store.id}>
+                        <img className={styles.storeImage} src={store.image_url} alt={store.name}/>
+                        <div className={styles.storeDetails}>
+                            <h3>{store.name}</h3>
+                            <span>{store.location.city}, {store.location.state}</span>
+                            <p>Reviews: {store.review_count}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     );
