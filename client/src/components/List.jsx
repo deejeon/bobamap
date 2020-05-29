@@ -29,7 +29,6 @@ function List({stores, useLocation, setUseLocation, setCoordinates, setRedo}) {
                         <div className={styles.storeDetails}>
                             <h3>{store.name}</h3>
                             <span>{store.location.city}, {store.location.state}</span>
-                            <p>Reviews: {store.review_count}</p>
                         </div>
                     </div>
                 </Link>

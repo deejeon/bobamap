@@ -10,7 +10,7 @@
 
 .listItem {
     width: 92%;
-    height: 100px;
+    height: 80px;
     margin: 2%;
     padding: 5px;
     border: 0.2px solid lightgray;
@@ -27,14 +27,14 @@
 }
 
 .storeImage {
-    width: 35%;
+    width: 25%;
     height: 100%;
     border-radius: 5px;
 }
 
 .storeDetails {
-    width: 70%;
-    height: 90px;
+    width: 75%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -45,9 +45,6 @@
 }
 
 .storeDetails span {
-    font-size: x-small;
-}
-
-.storeDetails p {
+    margin-top: 0px;
     font-size: x-small;
 }
