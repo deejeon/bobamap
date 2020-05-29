@@ -16,7 +16,7 @@ function App() {
       </header>
       <Router>
         <Main path="/"/>
-        <SingleStore path="stores/:alias" />
+        <SingleStore path="stores/:id" />
       </Router>
     </div>
   );

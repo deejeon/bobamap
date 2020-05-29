@@ -10,7 +10,7 @@
 .App-header {
   background-color: #f0fbff;
   border-bottom: 0.3px solid rgb(217, 217, 217);
-  min-height: 15vh;
+  max-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +19,57 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.single-store {
+  overflow: scroll;
+  max-height: 78vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.single-store-name {
+  font-size: 40px;
+}
+
+.single-store-photos-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 0px 20px 20px 20px;
+  border-bottom: 0.3px solid lightgray;
+}
+
+.single-store-photo {
+  max-height: 200px;
+  width: auto;
+}
+
+.single-store-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px 40px 20px 40px;
+}
+
+.single-store-location {
+  width: 40%;
+  text-align: left;
+}
+
+.single-store-location-line {
+  margin: 0px;
+}
+
+.single-store-hours {
+  text-align: left;
+  width: 30%;
+}
+
+.single-store-hours-line {
+  display: flex;
+  flex-direction: row;
+}
+
+.single-store-hours-day {
+  font-weight: bolder;
+  color: #9E1201;
+  width: 20%;
 }
